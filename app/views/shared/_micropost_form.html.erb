@@ -1,0 +1,7 @@
+<%= form_for(@micropost) do |f| %>
+   <%= render 'shared/error_messages', object: f.object %>
+   <div class="field">
+   	   <%= f.text_area :content, placeholder: "compose new micropost. The maximum length is #{@micropost.maximum_length}" %>
+   </div>
+   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>
