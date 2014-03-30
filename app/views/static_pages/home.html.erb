@@ -15,22 +15,22 @@
      </aside>
      <div class="span10">
         <h3>Microposts</h3>
-        <%= render 'shared/feed' %>
+        <div id="ajax_micropost">
+            <%= render 'shared/feed' %>
+        </div>
      </div>
    </div>
     
 <% else %> 
   <div class="center hero-unit">
-    <h1>Welcome to the Sample App</h1>
+    <h1>Welcome to Micropost World</h1>
     <h2>
-       This is the home page for the
-       <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-       sample application.
+       Just Enjoy Yourself!
     </h2>
 
     <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
   </div>
-  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+  <%= link_to image_tag("SysUniversity.jpg", alt: "SYSU", size: "100x100"), 'http://www.sysu.edu.cn/2012/cn/index.htm' %>
 <% end %>
 
     

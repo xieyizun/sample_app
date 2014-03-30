@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 3em;
+	font-size: 1.8em;
 	letter-spacing: -2px;
 	margin-bottom: 30px;
 	text-align: center;
@@ -174,8 +174,16 @@ input, textarea, select, .uneditable-input {
 }
 
 /* microposts */
-
 .microposts {
+	list-style: none;
+	margin: 10px 0 0 0;
+
+	li {
+	   padding: 10px 0;
+	   border-top: 1px solid #e8e8e8;
+	}	
+}
+.microposts_show {
 	list-style: none;
 	margin: 10px 0 0 0;
 
@@ -223,4 +231,14 @@ input, textarea, select, .uneditable-input {
 	.gravatar {
 	   margin: 1px 1px;
 	}
+}
+
+#comments {
+	
+}
+#ajax_micropost {
+	
+}
+#micropost_form_fresh {
+	
 }

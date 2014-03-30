@@ -5,15 +5,27 @@ class MicropostsController < ApplicationController
 	def index
 	end
 
+	def show
+		store_location
+		@micropost = Micropost.find_by_id(params[:id])
+		@comment =  Comment.new
+		@comments = @micropost.comments.paginate(page: params[:page])
+	end
 	def create
 		@micropost = current_user.microposts.build(params[:micropost])
+		@feed_items = current_user.feed.paginate(page: params[:page]) if signed_in?
 		if @micropost.save
-			flash[:success] = "Micropost created!"
-			redirect_to root_url
+			respond_to do |format|
+			   format.html {redirect_to root_url}
+			   format.js
+		    end
 		else
-			flash[:error] = "The micropost is blank or too long. The maximum length is #{@micropost.maximum_length}."
-			redirect_to root_url
+			respond_to do |format|
+			   format.html {redirect_to root_url}
+			   format.js
+		    end
 		end
+
 	end
 
 	def destroy
